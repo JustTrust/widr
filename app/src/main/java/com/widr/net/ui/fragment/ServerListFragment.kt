@@ -37,12 +37,6 @@ class ServerListFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         context?.let { serverList.addItemDecoration(DividerItemDecoration(it)) }
         serverList.adapter = ServerAdapter(listSites, { onClickLog(it) })
-        listLogout.onClick { if (isClickAllowed()) logout() }
-    }
-
-    private fun logout() {
-        viewModel.logout()
-        activity?.showNewFragment(LoginFragment::class.java, false)
     }
 
     private fun showList(sites: List<ServerEntity>) {

@@ -19,11 +19,4 @@ class ServerListVM : BaseViewModel() {
     }
 
     fun getListOfServers(): LiveData<List<ServerEntity>> = serverInteractor.getListOfServers()
-
-    fun logout() {
-        tokenInteractor.clearPassword()
-        tokenInteractor.clearUserName()
-        tokenInteractor.clearToken()
-        serverInteractor.clearServerList()
-    }
 }

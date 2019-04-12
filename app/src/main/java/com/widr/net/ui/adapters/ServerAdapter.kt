@@ -25,7 +25,7 @@ class ServerAdapter(private val items: List<ServerEntity>, private val listener:
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: ServerEntity, listener: (ServerEntity) -> Unit) = with(itemView) {
             serverName.text = item.name
-            serverDistance.text = item.distance.toString().plus(" ").plus(context.getString(R.string.km))
+            serverDistance.text = item.distance.toString().plus(" ")
             setOnClickListener { listener(item) }
         }
     }
