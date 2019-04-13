@@ -2,23 +2,23 @@ package com.widr.net.utils
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Rect
 import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
+import android.view.View
+import com.widr.net.R
 
 
-class DividerItemDecoration : RecyclerView.ItemDecoration {
+class DividerItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
 
     private var divider: Drawable? = null
 
-    constructor(context: Context) {
+    private val decorationHeight: Int = context.resources.getDimensionPixelSize(R.dimen.decoration_height)
+
+    init {
         val styledAttributes = context.obtainStyledAttributes(ATTRS)
         divider = styledAttributes.getDrawable(0)
         styledAttributes.recycle()
-    }
-
-    constructor(context: Context, resId: Int) {
-        divider = ContextCompat.getDrawable(context, resId)
     }
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
@@ -37,6 +37,14 @@ class DividerItemDecoration : RecyclerView.ItemDecoration {
                 it.setBounds(left, top, right, bottom)
                 it.draw(c)
             }
+        }
+    }
+
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView?, state: RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
+
+        if (parent != null) {
+            outRect.bottom = decorationHeight
         }
     }
 

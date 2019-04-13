@@ -16,7 +16,7 @@
     <View
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <com.widr.net.ui.views.BottomIconView
@@ -46,8 +46,10 @@
         android:id="@+id/newPostIcon"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/leak_canary_icon"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/add"
+        android:padding="10dp"
+        android:background="@drawable/plus_gradient"
         app:layout_constraintEnd_toStartOf="@+id/notifIcon"
         app:layout_constraintStart_toEndOf="@+id/msgIcon"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
@@ -71,7 +73,6 @@
         app:bottomIcon="@drawable/leak_canary_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/notifIcon"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
-        app:notificationText="1" />
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Widr</string>
     <string name="server_error">Some server error happens</string>
+    <string name="promoting">Sometimes this is irony of promoting your businesses
+        products and services, because you do not feel</string>
+    <string name="time">aujoud\'hui, 8h44</string>
 </resources>

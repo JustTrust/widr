@@ -8,4 +8,10 @@
     <color name="colorViolet">#8628F5</color>
     <color name="colorBlue">#2956F5</color>
     <color name="red">#FF0000</color>
+    <color name="plus_start">#23B7B3</color>
+    <color name="plus_end">#1E7DA6</color>
+    <color name="feed_name">#2A2626</color>
+    <color name="feed_contact">#2857F5</color>
+    <color name="icons_gray">#4A4A4A</color>
+    <color name="offset_color">#F6F6F6</color>
 </resources>

@@ -5,4 +5,9 @@
         <attr name="loginMask" format="boolean" />
         <attr name="actionDone" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="BottomIconView">
+        <attr name="notificationText" format="string" />
+        <attr name="bottomIcon" format="color|reference" />
+    </declare-styleable>
 </resources>

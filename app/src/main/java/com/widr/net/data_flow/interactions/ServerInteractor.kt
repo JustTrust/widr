@@ -1,6 +1,7 @@
 package com.widr.net.data_flow.interactions
 
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import com.widr.net.data_flow.converters.ServerConverter
 import com.widr.net.data_flow.database.LocalDatabase
 import com.widr.net.data_flow.database.entities.ServerEntity
@@ -25,7 +26,13 @@ class ServerInteractor(private val api: Api, private val db: LocalDatabase) : IS
     }
 
     override fun getListOfServers(): LiveData<List<ServerEntity>> {
-        return db.serverDao().getServerList()
+        return MutableLiveData<List<ServerEntity>>().apply {
+            value = ArrayList<ServerEntity>().apply {
+                for (i in 1..120) {
+                    add(ServerEntity(i.toString(), i))
+                }
+            }
+        }
     }
 
     override fun clearServerList() {

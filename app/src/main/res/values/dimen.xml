@@ -5,4 +5,5 @@
     <dimen name="button_height">54dp</dimen>
     <dimen name="side_margin">16dp</dimen>
     <dimen name="corner_radius">6dp</dimen>
+    <dimen name="decoration_height">6dp</dimen>
 </resources>

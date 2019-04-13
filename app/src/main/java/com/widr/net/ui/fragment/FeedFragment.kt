@@ -3,14 +3,10 @@ package com.widr.net.ui.fragment
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.flyco.tablayout.SlidingTabLayout
-import com.flyco.tablayout.listener.CustomTabEntity
 import com.widr.net.ErrorModel
 import com.widr.net.R
 import com.widr.net.data_flow.database.entities.ServerEntity
@@ -19,7 +15,6 @@ import com.widr.net.ui.adapters.ServerAdapter
 import com.widr.net.ui.base.BaseFragment
 import com.widr.net.ui.vm.ServerListVM
 import com.widr.net.utils.DividerItemDecoration
-import com.widr.net.utils.TabEntity
 import com.widr.net.utils.showSnack
 import kotlinx.android.synthetic.main.fragment_feed.*
 import timber.log.Timber

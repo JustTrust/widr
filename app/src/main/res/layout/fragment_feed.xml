@@ -3,16 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/main_gradient">
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/main_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/feedList"/>
 
     <ImageView
         android:id="@+id/leftIcon"
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:src="@drawable/compass"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="6dp"
         app:layout_constraintEnd_toStartOf="@+id/header"
         app:layout_constraintBottom_toBottomOf="@+id/header"/>
 
@@ -40,9 +48,10 @@
 
     <ImageView
         android:id="@+id/search"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
         android:src="@drawable/magnifying_glass"/>
@@ -66,22 +75,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/list_item"
+        tools:listitem="@layout/feed_item"
         android:visibility="gone"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/feedList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/side_margin"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/side_margin"
+        android:layout_marginTop="10dp"
         android:overScrollMode="never"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabs"
-        tools:listitem="@layout/list_item" />
+        android:background="@color/offset_color"
+        tools:listitem="@layout/feed_item" />
 
 </android.support.constraint.ConstraintLayout>

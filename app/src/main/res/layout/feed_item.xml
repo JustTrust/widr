@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/feedIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/images2" />
+
+    <TextView
+        android:id="@+id/feedName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="Anna Mendez"
+        android:textColor="@color/feed_name"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/feedIcon"
+        app:layout_constraintTop_toTopOf="@+id/feedIcon" />
+
+    <ImageView
+        android:id="@+id/feedUserIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="@+id/feedIcon"
+        app:layout_constraintStart_toEndOf="@+id/feedIcon" />
+
+    <TextView
+        android:id="@+id/feedRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="2dp"
+        android:text="Request to show 18 mutual contacts"
+        android:textColor="@color/feed_contact"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feedUserIcon"
+        app:layout_constraintStart_toEndOf="@+id/feedUserIcon" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/feed_contact"
+        app:layout_constraintEnd_toEndOf="@+id/feedRequest"
+        app:layout_constraintStart_toStartOf="@+id/feedRequest"
+        app:layout_constraintTop_toBottomOf="@+id/feedRequest" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/right_chevron"
+        app:layout_constraintBottom_toBottomOf="@+id/feedRequest"
+        app:layout_constraintStart_toEndOf="@id/feedRequest" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/feedInnerList"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/main_gradient"
+        android:orientation="horizontal"
+        android:scrollbarSize="4dp"
+        android:scrollbars="horizontal"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/feedIcon"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/feedBottomText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/promoting"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedInnerList" />
+
+    <ImageView
+        android:id="@+id/feedBubble"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/round_bubble"
+        app:layout_constraintStart_toStartOf="@+id/feedBottomText"
+        app:layout_constraintTop_toBottomOf="@+id/feedBottomText" />
+
+    <ImageView
+        android:id="@+id/feedUpload"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/upload_file"
+        app:layout_constraintStart_toEndOf="@+id/feedBubble"
+        app:layout_constraintTop_toBottomOf="@+id/feedBottomText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/time"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feedBubble"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

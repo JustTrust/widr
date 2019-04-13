@@ -1,6 +1,7 @@
 package com.widr.net.ui.vm
 
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.Transformations
 import com.widr.net.AndroidApplication
 import com.widr.net.data_flow.database.entities.ServerEntity
 import com.widr.net.data_flow.interactions.IServerInteractor
@@ -18,5 +19,7 @@ class ServerListVM : BaseViewModel() {
         AndroidApplication.component.inject(this)
     }
 
-    fun getListOfServers(): LiveData<List<ServerEntity>> = serverInteractor.getListOfServers()
+    fun getListOfServers(): LiveData<List<ServerEntity>> {
+        return serverInteractor.getListOfServers()
+    }
 }
