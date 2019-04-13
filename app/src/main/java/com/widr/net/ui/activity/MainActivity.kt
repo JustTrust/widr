@@ -17,7 +17,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changeStatusBarColor(R.color.colorWhite)
+        changeStatusBarColor(R.color.colorViolet)
         setContentView(R.layout.main_activity)
         viewModel = ViewModelProviders.of(this).get(MainActivityVM::class.java)
         viewModel.getNextScreen().observe(this, Observer { openNextScreen(it) })
@@ -29,7 +29,4 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
 }

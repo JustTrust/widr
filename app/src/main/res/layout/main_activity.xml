@@ -17,6 +17,61 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.widr.net.ui.views.BottomIconView
+        android:id="@+id/feedIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:bottomIcon="@drawable/leak_canary_icon"
+        app:layout_constraintEnd_toStartOf="@+id/msgIcon"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
+        app:notificationText="1" />
+
+    <com.widr.net.ui.views.BottomIconView
+        android:id="@+id/msgIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:bottomIcon="@drawable/leak_canary_icon"
+        app:layout_constraintEnd_toStartOf="@+id/newPostIcon"
+        app:layout_constraintStart_toEndOf="@+id/feedIcon"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
+        app:notificationText="1" />
+
+    <ImageView
+        android:id="@+id/newPostIcon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/leak_canary_icon"
+        app:layout_constraintEnd_toStartOf="@+id/notifIcon"
+        app:layout_constraintStart_toEndOf="@+id/msgIcon"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
+
+    <com.widr.net.ui.views.BottomIconView
+        android:id="@+id/notifIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:bottomIcon="@drawable/leak_canary_icon"
+        app:layout_constraintEnd_toStartOf="@+id/profileIcon"
+        app:layout_constraintStart_toEndOf="@+id/newPostIcon"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
+        app:notificationText="1" />
+
+    <com.widr.net.ui.views.BottomIconView
+        android:id="@+id/profileIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:bottomIcon="@drawable/leak_canary_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/notifIcon"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
+        app:notificationText="1" />
 
 </android.support.constraint.ConstraintLayout>
