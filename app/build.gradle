@@ -68,7 +68,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    def support_version = '27.1.1'
+    def support_version = '27.1.0'
     implementation "com.android.support:appcompat-v7:${support_version}"
     implementation "com.android.support:recyclerview-v7:${support_version}"
     implementation "com.android.support:design:${support_version}"
