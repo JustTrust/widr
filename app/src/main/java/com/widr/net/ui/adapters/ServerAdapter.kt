@@ -17,7 +17,12 @@ import java.util.*
 class ServerAdapter(private val items: List<ServerEntity>, private val listener: (ServerEntity) -> Unit) : RecyclerView.Adapter<ServerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false)
+        view.apply{
+            if (feedInnerList.onFlingListener == null) PagerSnapHelper().attachToRecyclerView(feedInnerList)
+            feedInnerList.addItemDecoration(LinePagerIndicatorDecoration())
+        }
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(items[position], listener)
@@ -28,17 +33,14 @@ class ServerAdapter(private val items: List<ServerEntity>, private val listener:
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: ServerEntity, listener: (ServerEntity) -> Unit) = with(itemView) {
-            feedName.text = "Anna Mendez".plus(item.name)
-            Picasso.get().load(if (item.distance % 2 == 1) R.drawable.images else R.drawable.images2).transform(CircleTransform()).into(feedIcon)
-            setOnClickListener { listener(item) }
-            if (feedInnerList.onFlingListener == null) PagerSnapHelper().attachToRecyclerView(feedInnerList)
-            //recyclerViewIndicator.setRecyclerView(feedInnerList)
-            feedInnerList.addItemDecoration(LinePagerIndicatorDecoration())
             feedInnerList.adapter = InnerAdapter(ArrayList<ServerEntity>().apply {
                 add(ServerEntity("Avocat d'affaires", 1))
                 add(ServerEntity("D'affaires avocat", 2))
                 add(ServerEntity("Demain d'affaires", 3))
             }, {})
+            feedName.text = "Anna Mendez".plus(item.name)
+            Picasso.get().load(if (item.distance % 2 == 1) R.drawable.images else R.drawable.images2).transform(CircleTransform()).into(feedIcon)
+            setOnClickListener { listener(item) }
         }
     }
 }
