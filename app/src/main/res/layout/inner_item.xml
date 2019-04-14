@@ -13,21 +13,42 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
+    <ImageView
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:src="@drawable/vesy"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/innerOffre"/>
+
     <TextView
-        android:id="@+id/serverName"
+        android:id="@+id/innerOffre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp"
-        android:paddingEnd="20dp"
-        android:paddingStart="20dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
         android:background="@drawable/offre_bg"
-        android:text="@string/offre" />
+        android:paddingStart="16dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        android:text="@string/offre"
+        android:textColor="@color/colorWhite"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/innerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineCenter"
+        tools:text="Avocat d'affaires" />
 
     <TextView
         android:id="@+id/innerCity"
@@ -35,9 +56,9 @@
         android:layout_height="wrap_content"
         android:text="@string/a_rennes_france"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/innerName" />
 
 </android.support.constraint.ConstraintLayout>

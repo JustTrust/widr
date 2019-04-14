@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.flyco.tablayout.listener.CustomTabEntity
 import com.widr.net.ErrorModel
 import com.widr.net.R
 import com.widr.net.data_flow.database.entities.ServerEntity
@@ -15,6 +16,7 @@ import com.widr.net.ui.adapters.ServerAdapter
 import com.widr.net.ui.base.BaseFragment
 import com.widr.net.ui.vm.ServerListVM
 import com.widr.net.utils.DividerItemDecoration
+import com.widr.net.utils.TabEntity
 import com.widr.net.utils.showSnack
 import kotlinx.android.synthetic.main.fragment_feed.*
 import timber.log.Timber
@@ -37,16 +39,17 @@ class FeedFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         context?.let { feedList.addItemDecoration(DividerItemDecoration(it)) }
         feedList.adapter = ServerAdapter(listSites, { onClickLog(it) })
-        val tabList = ArrayList<String>().apply {
-            add("Toutes les annonces")
-            add("Explorer les offres")
-            add("Trouver un profits")
-            add("Trouver un profiles")
+        val tabList = ArrayList<CustomTabEntity>().apply {
+            add(TabEntity("Toutes les annonces",0,0))
+            add(TabEntity("Explorer les offres",0,0))
+            add(TabEntity("Trouver un profit",0,0))
+            add(TabEntity("Trouver un profilés",0,0))
         }
         tabs.isTabSpaceEqual = false
         tabs.isTextAllCaps = false
         tabs.tabPadding = 4f
-        tabs.setViewPager(ViewPager(activity!!).apply { adapter = HeaderPageAdapter(activity!!.supportFragmentManager) }, tabList.toTypedArray())
+        tabs.setTabData(tabList)
+        //tabs.setViewPager(ViewPager(activity!!).apply { adapter = HeaderPageAdapter(activity!!.supportFragmentManager) }, tabList.toTypedArray())
     }
 
     private fun showList(sites: List<ServerEntity>) {

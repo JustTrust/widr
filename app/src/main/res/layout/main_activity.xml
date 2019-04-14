@@ -24,23 +24,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:bottomIcon="@drawable/leak_canary_icon"
+        app:bottomIcon="@drawable/flash"
+        app:bottomIconSelected="@drawable/flash_gradient"
         app:layout_constraintEnd_toStartOf="@+id/msgIcon"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
-        app:notificationText="1" />
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
 
     <com.widr.net.ui.views.BottomIconView
         android:id="@+id/msgIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:bottomIcon="@drawable/leak_canary_icon"
+        app:bottomIcon="@drawable/round"
+        app:bottomIconSelected="@drawable/round_gradient"
         app:layout_constraintEnd_toStartOf="@+id/newPostIcon"
         app:layout_constraintStart_toEndOf="@+id/feedIcon"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
-        app:notificationText="1" />
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
 
     <ImageView
         android:id="@+id/newPostIcon"
@@ -59,7 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:bottomIcon="@drawable/leak_canary_icon"
+        app:bottomIcon="@drawable/bell"
+        app:bottomIconSelected="@drawable/bell_gradient"
         app:layout_constraintEnd_toStartOf="@+id/profileIcon"
         app:layout_constraintStart_toEndOf="@+id/newPostIcon"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigation"
@@ -69,8 +70,9 @@
         android:id="@+id/profileIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:bottomIcon="@drawable/leak_canary_icon"
+        android:layout_marginTop="2dp"
+        app:bottomIcon="@drawable/profile"
+        app:bottomIconSelected="@drawable/profile_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/notifIcon"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />

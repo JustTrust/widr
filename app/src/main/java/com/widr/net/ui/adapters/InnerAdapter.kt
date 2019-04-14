@@ -24,8 +24,7 @@ class InnerAdapter(private val items: List<ServerEntity>, private val listener: 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: ServerEntity, listener: (ServerEntity) -> Unit) = with(itemView) {
-            serverName.text = item.name
-            setOnClickListener { listener(item) }
+            innerName.text = item.name
         }
     }
 }

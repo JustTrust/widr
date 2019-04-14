@@ -34,7 +34,7 @@ public class LinePagerIndicatorDecoration extends RecyclerView.ItemDecoration {
     /**
      * Indicator width.
      */
-    private final float mIndicatorItemLength = DP * 4;
+    private final float mIndicatorItemLength = DP * 3;
     /**
      * Padding between indicators.
      */

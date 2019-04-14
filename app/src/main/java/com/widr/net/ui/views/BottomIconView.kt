@@ -4,10 +4,13 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
 import com.widr.net.R
 import com.widr.net.utils.setTextOrGone
 import kotlinx.android.synthetic.main.bootom_icon_view.view.*
+import timber.log.Timber
 
 /**
  * Simple button with text and icon
@@ -18,17 +21,21 @@ class BottomIconView @JvmOverloads constructor(
         defStyle: Int = 0) : FrameLayout(context, attributeSet, defStyle) {
 
     var iconDrawable: Drawable? = null
+    var iconSelected: Drawable? = null
+
+    private val iconAnimation: Animation = AnimationUtils.loadAnimation(context, R.anim.shrink_grow)
+
+    var checked: Boolean = false
+        set(value) {
+            if (value) icon.startAnimation(iconAnimation)
+            field = value
+            icon.setImageDrawable(if (value) iconSelected else iconDrawable)
+        }
 
     var text: String? = null
         set(value) {
             field = value
-            initView()
-        }
-
-    private var iconId: Int = 0
-        set(value) {
-            field = value
-            initView()
+            notification.setTextOrGone(text)
         }
 
     init {
@@ -45,17 +52,19 @@ class BottomIconView @JvmOverloads constructor(
         if (a.hasValue(R.styleable.BottomIconView_bottomIcon)) {
             iconDrawable = a.getDrawable(R.styleable.BottomIconView_bottomIcon)
         }
+        if (a.hasValue(R.styleable.BottomIconView_bottomIconSelected)) {
+            iconSelected = a.getDrawable(R.styleable.BottomIconView_bottomIconSelected)
+        }
         a.recycle()
     }
 
     private fun initView() {
         notification.setTextOrGone(text)
-
-        if (iconId != 0) {
-            icon.setImageResource(iconId)
-        } else {
-            icon.setImageDrawable(iconDrawable)
-        }
+        icon.setImageDrawable(iconDrawable)
     }
 
+    override fun performClick(): Boolean {
+        if (!checked) checked = !checked
+        return super.performClick()
+    }
 }

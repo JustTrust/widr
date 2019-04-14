@@ -9,5 +9,6 @@
     <declare-styleable name="BottomIconView">
         <attr name="notificationText" format="string" />
         <attr name="bottomIcon" format="color|reference" />
+        <attr name="bottomIconSelected" format="color|reference" />
     </declare-styleable>
 </resources>
