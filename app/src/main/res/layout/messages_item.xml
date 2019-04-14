@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/messagesIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/messagesLast"
+        app:layout_constraintBottom_toBottomOf="@+id/messagesLast"
+        tools:src="@drawable/images2" />
+
+    <TextView
+        android:id="@+id/messagesName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/feed_name"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/messagesIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Anna Mendez" />
+
+    <TextView
+        android:id="@+id/messagesLast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text = "There are millions of users, and there will be much more"
+        app:layout_constraintTop_toBottomOf="@+id/messagesName"
+        app:layout_constraintStart_toStartOf="@+id/messagesName"
+        app:layout_constraintEnd_toStartOf="@id/messagesGuideline"/>
+
+    <ImageView
+        android:id="@+id/messagesFire"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/fire"
+        app:layout_constraintTop_toTopOf="@+id/messagesPosition"
+        app:layout_constraintBottom_toBottomOf="@+id/messagesPosition"
+        app:layout_constraintStart_toEndOf="@+id/messagesIcon" />
+
+    <TextView
+        android:id="@+id/messagesPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/messagesLast"
+        app:layout_constraintStart_toEndOf="@+id/messagesFire"
+        tools:text="Graphic Designer - 2D Artist" />
+
+    <View
+        android:id="@+id/messagesDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/offset_color"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/messagesPosition"
+        app:layout_constraintStart_toStartOf="@id/messagesName" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/messagesGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="100dp" />
+
+</android.support.constraint.ConstraintLayout>

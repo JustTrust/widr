@@ -27,6 +27,6 @@
         android:textColor="@color/colorWhite"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/icon"
-        app:layout_constraintStart_toStartOf="@+id/icon" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

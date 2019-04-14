@@ -10,7 +10,6 @@ import android.widget.FrameLayout
 import com.widr.net.R
 import com.widr.net.utils.setTextOrGone
 import kotlinx.android.synthetic.main.bootom_icon_view.view.*
-import timber.log.Timber
 
 /**
  * Simple button with text and icon

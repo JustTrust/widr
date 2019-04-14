@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.widr.net.R
 import com.widr.net.ui.base.BaseActivity
 import com.widr.net.ui.base.BaseFragment
+import com.widr.net.ui.fragment.FeedFragment
+import com.widr.net.ui.fragment.MessagesFragment
 import com.widr.net.ui.views.BottomIconView
 import com.widr.net.ui.vm.MainActivityVM
 import com.widr.net.utils.changeStatusBarColor
@@ -34,18 +36,31 @@ class MainActivity : BaseActivity() {
     }
 
     private fun openNextScreen(fragment: Class<out BaseFragment>?) {
-        fragment?.let {
-            showNewFragment(it, false)
-        }
+        fragment?.let { showNewFragment(it, false) }
     }
 
     private fun initBottomNavigation() {
         lastPage = feedIcon
         feedIcon.checked =true
-        feedIcon.onClick { lastPage = feedIcon }
-        msgIcon.onClick { lastPage = msgIcon}
+        feedIcon.onClick {
+            if (lastPage?.id != feedIcon.id) {
+                lastPage = feedIcon
+                viewModel.showNextScreen(FeedFragment::class.java)
+            }
+        }
+        msgIcon.onClick {
+            if (lastPage?.id != msgIcon.id) {
+                lastPage = msgIcon
+                viewModel.showNextScreen(MessagesFragment::class.java)
+            }
+        }
         newPostIcon.onClick { }
-        notifIcon.onClick { lastPage = notifIcon }
+        notifIcon.onClick {
+            if (lastPage?.id != notifIcon.id) {
+                notifIcon.text = viewModel.getNotificationCount(notifIcon.text)
+                lastPage = notifIcon
+            }
+        }
         profileIcon.onClick { lastPage = profileIcon }
     }
 }

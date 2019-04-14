@@ -12,12 +12,12 @@ def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.widr.net"
         multiDexEnabled true
-        minSdkVersion 22
-        targetSdkVersion 27
+        minSdkVersion 23
+        targetSdkVersion 28
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'

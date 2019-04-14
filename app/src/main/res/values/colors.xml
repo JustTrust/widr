@@ -15,4 +15,6 @@
     <color name="icons_gray">#4A4A4A</color>
     <color name="offset_color">#F6F6F6</color>
     <color name="white_transparent">#4DFFFFFF</color>
+    <color name="light_violet">#8E45AD</color>
+    <color name="dark_violet">#4A137D</color>
 </resources>

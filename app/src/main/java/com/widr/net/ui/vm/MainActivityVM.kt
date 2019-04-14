@@ -21,4 +21,15 @@ class MainActivityVM : BaseViewModel() {
     }
 
     fun getNextScreen(): LiveData<Class<out BaseFragment>> = nextScreen
+
+    fun showNextScreen(screen: Class<out BaseFragment>) = nextScreen.postValue(screen)
+
+    fun getNotificationCount(text: String?): String {
+        return if (text == null || text.isBlank()){
+            ""
+        }else{
+            val currenCount = text.toIntOrNull()
+            currenCount?.inc()?.toString() ?: ""
+        }
+    }
 }

@@ -1,7 +1,6 @@
 package com.widr.net.ui.vm
 
 import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Transformations
 import com.widr.net.AndroidApplication
 import com.widr.net.data_flow.database.entities.ServerEntity
 import com.widr.net.data_flow.interactions.IServerInteractor
@@ -9,7 +8,7 @@ import com.widr.net.data_flow.interactions.ITokenInteractor
 import com.widr.net.ui.base.BaseViewModel
 import javax.inject.Inject
 
-class ServerListVM : BaseViewModel() {
+class FeedFragmentVM : BaseViewModel() {
 
     @Inject lateinit var serverInteractor: IServerInteractor
 
