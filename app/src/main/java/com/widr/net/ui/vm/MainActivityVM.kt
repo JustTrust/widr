@@ -25,11 +25,10 @@ class MainActivityVM : BaseViewModel() {
     fun showNextScreen(screen: Class<out BaseFragment>) = nextScreen.postValue(screen)
 
     fun getNotificationCount(text: String?): String {
-        return if (text == null || text.isBlank()){
+        return if (text == null || text.isBlank()) {
             ""
-        }else{
-            val currenCount = text.toIntOrNull()
-            currenCount?.inc()?.toString() ?: ""
+        } else {
+            text.toIntOrNull()?.inc()?.toString() ?: ""
         }
     }
 }

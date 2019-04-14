@@ -3,6 +3,9 @@ package com.widr.net.ui.activity
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.DecelerateInterpolator
 import com.widr.net.R
 import com.widr.net.ui.base.BaseActivity
 import com.widr.net.ui.base.BaseFragment
@@ -26,9 +29,15 @@ class MainActivity : BaseActivity() {
             field = value
         }
 
+    private val iconAnimation: Animation by lazy {
+        AnimationUtils.loadAnimation(this, R.anim.rotate).apply {
+            interpolator = DecelerateInterpolator()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changeStatusBarColor(R.color.colorViolet)
+        changeStatusBarColor()
         setContentView(R.layout.main_activity)
         viewModel = ViewModelProviders.of(this).get(MainActivityVM::class.java)
         viewModel.getNextScreen().observe(this, Observer { openNextScreen(it) })
@@ -41,7 +50,7 @@ class MainActivity : BaseActivity() {
 
     private fun initBottomNavigation() {
         lastPage = feedIcon
-        feedIcon.checked =true
+        feedIcon.checked = true
         feedIcon.onClick {
             if (lastPage?.id != feedIcon.id) {
                 lastPage = feedIcon
@@ -54,7 +63,7 @@ class MainActivity : BaseActivity() {
                 viewModel.showNextScreen(MessagesFragment::class.java)
             }
         }
-        newPostIcon.onClick { }
+        newPostIcon.onClick { if (isClickAllowed()) newPostIcon.startAnimation(iconAnimation) }
         notifIcon.onClick {
             if (lastPage?.id != notifIcon.id) {
                 notifIcon.text = viewModel.getNotificationCount(notifIcon.text)

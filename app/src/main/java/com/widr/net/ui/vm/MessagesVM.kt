@@ -34,6 +34,15 @@ class MessagesVM : BaseViewModel() {
                     "Havana",
                     "11:24 AM",
                     true))
+            for (i in 1..12) {
+                add(MessagesAnswer("Lubosec Hnilo".plus(i.toString()),
+                        "There are millions of users, and there will be much more",
+                        "Déménagement avec camion",
+                        if (i % 2 == 1) R.drawable.images2 else R.drawable.images,
+                        if (i % 2 == 1)"Algiers" else "Bangalore",
+                        "12 Jan",
+                        false))
+            }
         }
     }
 }

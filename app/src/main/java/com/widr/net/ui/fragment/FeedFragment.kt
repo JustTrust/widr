@@ -39,6 +39,7 @@ class FeedFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         context?.let { feedList.addItemDecoration(DividerItemDecoration(it)) }
+        feedList.setHasFixedSize(true)
         feedList.adapter = FeedAdapter(listSites, { onClickLog(it) })
         search.onClick { if (isClickAllowed()) openSearch() }
         initTabs()

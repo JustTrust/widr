@@ -15,7 +15,6 @@ import com.widr.net.ui.base.BaseFragment
 import com.widr.net.ui.vm.MessagesVM
 import com.widr.net.utils.onClick
 import com.widr.net.utils.showSnack
-import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.android.synthetic.main.messages_fragment.*
 import timber.log.Timber
 
@@ -36,6 +35,7 @@ class MessagesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        messagesList.setHasFixedSize(true)
         messagesList.adapter = MessagesAdapter(messages, { onClickLog(it) })
         messagesSearch.onClick { if (isClickAllowed()) openSearch() }
     }

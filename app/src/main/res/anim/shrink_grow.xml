@@ -20,7 +20,6 @@
         android:fillEnabled="true"
         android:fromXScale="1.2"
         android:fromYScale="1.2"
-        android:startOffset="50"
         android:toXScale="1.0"
         android:toYScale="1.0" />
 </set>

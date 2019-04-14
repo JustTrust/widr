@@ -4,8 +4,10 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
 import com.widr.net.R
 import com.widr.net.utils.setTextOrGone
@@ -22,7 +24,9 @@ class BottomIconView @JvmOverloads constructor(
     var iconDrawable: Drawable? = null
     var iconSelected: Drawable? = null
 
-    private val iconAnimation: Animation = AnimationUtils.loadAnimation(context, R.anim.shrink_grow)
+    private val iconAnimation: Animation = AnimationUtils.loadAnimation(context, R.anim.shrink_grow).apply {
+        interpolator = DecelerateInterpolator()
+    }
 
     var checked: Boolean = false
         set(value) {

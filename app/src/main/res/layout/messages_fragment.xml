@@ -9,7 +9,7 @@
     <View
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="130dp"
         android:background="@drawable/violet_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:id="@+id/messagesSearch"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/avd_anim"
         app:layout_constraintEnd_toEndOf="parent"
