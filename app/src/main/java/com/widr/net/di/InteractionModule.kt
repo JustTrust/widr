@@ -22,4 +22,8 @@ class InteractionModule {
     @Provides
     @Singleton
     fun provideSitesInteractor(api: Api, db: LocalDatabase): IServerInteractor = ServerInteractor(api, db)
+
+    @Provides
+    @Singleton
+    fun provideChatInteractor(db: LocalDatabase): IChatInteractor = ChatInteractor(db)
 }

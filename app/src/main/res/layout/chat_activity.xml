@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/chatIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/images2" />
+
+    <ImageView
+        android:id="@+id/chatChevron"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/left_chevron"
+        app:layout_constraintBottom_toBottomOf="@+id/chatIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chatIcon" />
+
+    <TextView
+        android:id="@+id/chatReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/retour"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chatIcon"
+        app:layout_constraintStart_toEndOf="@+id/chatChevron"
+        app:layout_constraintTop_toTopOf="@+id/chatIcon" />
+
+    <TextView
+        android:id="@+id/chatName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatIcon"
+        tools:text="Anna Mendez" />
+
+    <TextView
+        android:id="@+id/chatMutual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/chat_mutal_bg"
+        android:paddingStart="10dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="3dp"
+        android:text="@string/display_mutual_contact"
+        android:textColor="@color/feed_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatName" />
+
+    <View
+        android:id="@+id/chatFirstDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/divider_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatMutual" />
+
+    <ImageView
+        android:id="@+id/chatHand"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/hand"
+        app:layout_constraintBottom_toTopOf="@+id/chatSecondDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatFirstDivider" />
+
+    <TextView
+        android:id="@+id/chatDroit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/droit_des_societes"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/chatProvence"
+        app:layout_constraintStart_toEndOf="@+id/chatHand"
+        app:layout_constraintTop_toBottomOf="@+id/chatFirstDivider"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/chatProvence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/aix_en_provence"
+        android:textColor="@color/gray66"
+        app:layout_constraintBottom_toTopOf="@+id/chatSecondDivider"
+        app:layout_constraintStart_toEndOf="@+id/chatHand"
+        app:layout_constraintTop_toBottomOf="@+id/chatDroit" />
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="26dp"
+        android:src="@drawable/right_chevron_gray"
+        app:layout_constraintBottom_toTopOf="@+id/chatSecondDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatFirstDivider" />
+
+    <View
+        android:id="@+id/chatSecondDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/divider_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatFirstDivider" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chatList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:overScrollMode="never"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/chatBottomDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatSecondDivider"
+        tools:listitem="@layout/messages_item" />
+
+    <View
+        android:id="@+id/chatBottomDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/divider_light"
+        app:layout_constraintBottom_toTopOf="@+id/chatMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/chatPerson"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:padding="4dp"
+        android:src="@drawable/person_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/chatMsg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chatMsg" />
+
+    <ImageView
+        android:id="@+id/chatPicture"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:padding="4dp"
+        android:src="@drawable/picture"
+        app:layout_constraintBottom_toBottomOf="@+id/chatMsg"
+        app:layout_constraintStart_toEndOf="@+id/chatPerson"
+        app:layout_constraintTop_toTopOf="@+id/chatMsg" />
+
+    <ImageView
+        android:id="@+id/chatCamera"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:padding="4dp"
+        android:src="@drawable/photo_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/chatMsg"
+        app:layout_constraintStart_toEndOf="@+id/chatPicture"
+        app:layout_constraintTop_toTopOf="@+id/chatMsg" />
+
+    <EditText
+        android:id="@+id/chatMsg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/chat_msg_bg"
+        android:hint="@string/message_hint"
+        android:inputType="textMultiLine"
+        android:maxHeight="80dp"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="6dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chatPhone"
+        app:layout_constraintStart_toEndOf="@+id/chatCamera" />
+
+    <ImageView
+        android:id="@+id/chatPhone"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="12dp"
+        android:padding="4dp"
+        android:src="@drawable/phone_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/chatMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chatMsg" />
+
+</android.support.constraint.ConstraintLayout>

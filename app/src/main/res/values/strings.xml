@@ -7,4 +7,9 @@
     <string name="offre">OFFRE</string>
     <string name="a_rennes_france">a Rennes, France</string>
     <string name="messages">Messages</string>
+    <string name="retour">Retour</string>
+    <string name="display_mutual_contact">Display mutual contact</string>
+    <string name="droit_des_societes">Droit des sociétés</string>
+    <string name="aix_en_provence">Aix-en-Provence</string>
+    <string name="message_hint">Message</string>
 </resources>

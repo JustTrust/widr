@@ -1,5 +1,6 @@
 package com.widr.net.ui.adapters
 
+import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +37,13 @@ class MessagesAdapter(private val items: List<MessagesAnswer>, private val liste
             messagesFire.setVisibility(item.hot)
             messageTime.setVisibility(item.hot)
             if (item.hot) {
+                messagesName.setTypeface(null, Typeface.BOLD)
+                messagesLast.setTextColor(resources.getColor(R.color.colorBlack, null))
                 messageDate.setPadding(0, 0, 2.dpToPixel(context), 0)
                 messagesPosition.setPadding(2.dpToPixel(context), 0, 0, 0)
             } else {
+                messagesName.setTypeface(null, Typeface.NORMAL)
+                messagesLast.setTextColor(resources.getColor(R.color.text_gray, null))
                 messageDate.setPadding(0, 0, 16.dpToPixel(context), 0)
                 messagesPosition.setPadding(15.dpToPixel(context), 0, 0, 0)
             }

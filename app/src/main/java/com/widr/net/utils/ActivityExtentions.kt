@@ -48,8 +48,13 @@ fun FragmentActivity.showNewFragment(fragment: Class<out BaseFragment>?, addToBa
     fragment?.let { fragment.newInstance().show(supportFragmentManager, addToBackStack, sharedView, sharedName) }
 }
 
-fun Activity.changeStatusBarColor() {
+fun Activity.changeStatusBarColor(lightStatusBar: Boolean = false) {
     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
     window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+    val flag = window.decorView.systemUiVisibility
+    window.decorView.systemUiVisibility = if(lightStatusBar){
+        (flag or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+    } else {
+        (flag and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+    }
 }

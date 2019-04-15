@@ -2,19 +2,19 @@ package com.widr.net.ui.fragment
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.widr.net.ErrorModel
 import com.widr.net.R
 import com.widr.net.data_flow.network.api_models.MessagesAnswer
+import com.widr.net.ui.activity.ChatActivity
 import com.widr.net.ui.adapters.MessagesAdapter
 import com.widr.net.ui.base.BaseFragment
 import com.widr.net.ui.vm.MessagesVM
 import com.widr.net.utils.onClick
-import com.widr.net.utils.showSnack
 import kotlinx.android.synthetic.main.messages_fragment.*
 import timber.log.Timber
 
@@ -60,8 +60,9 @@ class MessagesFragment : BaseFragment() {
         messagesList.adapter.notifyDataSetChanged()
     }
 
-    private fun onClickLog(server: MessagesAnswer) {
+    private fun onClickLog(message: MessagesAnswer) {
         Timber.d("On click was fired ")
-        activity?.showSnack(ErrorModel(string = "ServerEntity ${server.name} was chosen"))
+        viewModel.setChatRoom(message)
+        activity?.let { startActivity(Intent(it, ChatActivity::class.java)) }
     }
 }

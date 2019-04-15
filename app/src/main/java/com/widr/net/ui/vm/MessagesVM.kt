@@ -4,16 +4,14 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import com.widr.net.AndroidApplication
 import com.widr.net.R
-import com.widr.net.data_flow.interactions.IServerInteractor
-import com.widr.net.data_flow.interactions.ITokenInteractor
+import com.widr.net.data_flow.interactions.IChatInteractor
 import com.widr.net.data_flow.network.api_models.MessagesAnswer
 import com.widr.net.ui.base.BaseViewModel
 import javax.inject.Inject
 
 class MessagesVM : BaseViewModel() {
 
-    @Inject lateinit var serverInteractor: IServerInteractor
-    @Inject lateinit var tokenInteractor: ITokenInteractor
+    @Inject lateinit var chatInteractor: IChatInteractor
 
     init {
         AndroidApplication.component.inject(this)
@@ -41,8 +39,12 @@ class MessagesVM : BaseViewModel() {
                         if (i % 2 == 1) R.drawable.images2 else R.drawable.images,
                         if (i % 2 == 1)"Algiers" else "Bangalore",
                         "12 Jan",
-                        false))
+                        i % 6 == 1))
             }
         }
+    }
+
+    fun setChatRoom(message: MessagesAnswer) {
+        chatInteractor.currentMessage = message
     }
 }

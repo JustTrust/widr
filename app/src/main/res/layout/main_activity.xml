@@ -43,14 +43,22 @@
         app:layout_constraintStart_toEndOf="@+id/feedIcon"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/plus_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/newPostIcon"
+        app:layout_constraintEnd_toEndOf="@+id/newPostIcon"
+        app:layout_constraintStart_toStartOf="@+id/newPostIcon"
+        app:layout_constraintTop_toTopOf="@+id/newPostIcon" />
+
     <ImageView
         android:id="@+id/newPostIcon"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginTop="6dp"
-        android:src="@drawable/add"
         android:padding="10dp"
-        android:background="@drawable/plus_gradient"
+        android:src="@drawable/add"
         app:layout_constraintEnd_toStartOf="@+id/notifIcon"
         app:layout_constraintStart_toEndOf="@+id/msgIcon"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
