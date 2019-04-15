@@ -3,9 +3,7 @@ package com.widr.net.ui.activity
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.view.animation.DecelerateInterpolator
+import android.view.animation.*
 import com.widr.net.R
 import com.widr.net.ui.base.BaseActivity
 import com.widr.net.ui.base.BaseFragment
@@ -31,7 +29,7 @@ class MainActivity : BaseActivity() {
 
     private val iconAnimation: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.rotate).apply {
-            interpolator = DecelerateInterpolator()
+            interpolator = AccelerateDecelerateInterpolator()
         }
     }
 

@@ -19,6 +19,7 @@
     <color name="dark_violet">#4A137D</color>
     <color name="text_gray">#9B9B9B</color>
     <color name="blue_bg_color">#DFE6FE</color>
+    <color name="violet_bg_color">#E8C7FF</color>
     <color name="divider_light">#EAEAEA</color>
     <color name="gray66">#666666</color>
 </resources>

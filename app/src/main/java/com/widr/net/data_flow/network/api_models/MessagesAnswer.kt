@@ -5,11 +5,13 @@ package com.widr.net.data_flow.network.api_models
  * mail: a.belichenko@gmail.com
  */
 data class MessagesAnswer(
+        val id: Int,
         val name: String,
         val lastMsg: String,
         val position: String,
         val icon: Int,
         val city: String,
         val date: String,
-        val hot: Boolean
+        val hot: Boolean,
+        val msg: List<ChatMessageAnswer>
 )

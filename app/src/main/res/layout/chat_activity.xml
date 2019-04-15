@@ -138,6 +138,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/chatBottomDivider"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,15 +210,27 @@
         app:layout_constraintEnd_toStartOf="@+id/chatPhone"
         app:layout_constraintStart_toEndOf="@+id/chatCamera" />
 
-    <ImageView
+    <ImageSwitcher
         android:id="@+id/chatPhone"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginEnd="12dp"
-        android:padding="4dp"
-        android:src="@drawable/phone_blue"
         app:layout_constraintBottom_toBottomOf="@+id/chatMsg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/chatMsg" />
+        app:layout_constraintTop_toTopOf="@+id/chatMsg">
 
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="12dp"
+            android:padding="4dp"
+            android:src="@drawable/phone_blue" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="12dp"
+            android:padding="4dp"
+            android:src="@drawable/send_blue" />
+    </ImageSwitcher>
 </android.support.constraint.ConstraintLayout>
