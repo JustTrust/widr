@@ -12,13 +12,9 @@ import com.widr.net.data_flow.network.api_models.ChatMessageAnswer
 import com.widr.net.ui.adapters.ChatAdapter
 import com.widr.net.ui.base.BaseActivity
 import com.widr.net.ui.vm.ChatActivityVM
-import com.widr.net.utils.CircleTransform
-import com.widr.net.utils.afterTextChanged
-import com.widr.net.utils.onClick
-import com.widr.net.utils.setVisibility
 import kotlinx.android.synthetic.main.chat_activity.*
 import android.content.Intent
-
+import com.widr.net.utils.*
 
 
 class ChatActivity : BaseActivity() {
@@ -30,10 +26,12 @@ class ChatActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-        val flag = window.decorView.systemUiVisibility
-        window.decorView.systemUiVisibility = flag or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        changeStatusBarColor(true)
 
+        window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+//        val flag = window.decorView.systemUiVisibility
+//        window.decorView.systemUiVisibility = flag or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        window.statusBarColor = Color.TRANSPARENT
         setContentView(R.layout.chat_activity)
         viewModel = ViewModelProviders.of(this).get(ChatActivityVM::class.java)
         viewModel.getChatList().observe(this, Observer { showList(it) })
